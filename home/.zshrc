@@ -55,6 +55,7 @@ export PATH=$PATH:$HOME/.local/opt/go/bin
 
 export STARSHIP_CONFIG=~/.config/starship.toml
 export EDITOR=nvim
+export GIT_CONFIG_GLOBAL=~/.config/git/config
 
 # Added by Antigravity
 export PATH="/Users/santidalmasso/.antigravity/antigravity/bin:$PATH"
