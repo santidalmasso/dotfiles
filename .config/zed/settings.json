@@ -1,0 +1,37 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "agent": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "base_keymap": "VSCode",
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Vesper"
+  }
+}

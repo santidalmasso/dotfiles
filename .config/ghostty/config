@@ -1,0 +1,37 @@
+# font-family = "Geist Mono Medium"
+# font-family = "Cascadia Code NF"
+font-family = "DankMono Nerd Font Mono Bold"
+
+shell-integration = zsh
+shell-integration = zsh
+clipboard-trim-trailing-spaces = true
+
+background-opacity = 0.95
+background-blur-radius = 20
+
+clipboard-read = allow
+clipboard-write = allow
+
+macos-option-as-alt = true
+macos-titlebar-proxy-icon = hidden
+
+title = Terminal 
+
+theme = "Catppuccin Mocha"
+
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:bottom
+# keybind = ctrl+k=goto_split:top
+# keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+a>h=new_split:left
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>k=new_split:up
+keybind = ctrl+a>l=new_split:right
+keybind = ctrl+a>f=toggle_split_zoom
+
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+
+

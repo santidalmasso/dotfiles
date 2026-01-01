@@ -1,1 +1,9 @@
 .DS_Store
+.AppleDouble
+.LSOverride
+
+*.env
+*.log
+
+node_modules
+*__pycache__

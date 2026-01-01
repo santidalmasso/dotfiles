@@ -1,0 +1,148 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    // "context": "Editor || Terminal || Dock", Use this if there is an error
+    "context": "Dock || Terminal || Editor || Workspace",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // Buffers (Tabs en Zed)
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "] b": "pane::ActivateNextItem",
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseOtherItems",
+
+      // Finders
+      "space f f": "file_finder::Toggle",
+      "space f r": "projects::OpenRecent",
+      "space f n": "workspace::NewFile",
+      "space e": "project_panel::ToggleFocus",
+      "space f e": "project_panel::ToggleFocus",
+
+      // Search
+      "space s g": "pane::DeploySearch",
+      "space s s": "outline::Toggle",
+      "space s S": "project_symbols::Toggle",
+
+      // Code / LSP
+      "g d": "editor::GoToDefinition",
+      "g D": "editor::GoToDeclaration",
+      "g r": "editor::FindAllReferences",
+      "g i": "editor::GoToImplementation",
+      "g I": "editor::GoToImplementation",
+      "g y": "editor::GoToTypeDefinition",
+      "]]": "editor::GoToNextReference",
+      "[[": "editor::GoToPreviousReference",
+      "[ h": "editor::GoToPreviousHunk",
+      "] h": "editor::GoToHunk",
+      "K": "editor::Hover",
+      "space c a": "editor::ToggleCodeActions",
+      "space r n": "editor::Rename",
+      "space c r": "editor::Rename",
+      "space c f": "editor::Format",
+      "space u f": "editor::Format",
+      "space /": "editor::ToggleComments",
+
+      // Diagnostics
+      "space x x": "diagnostics::Deploy",
+      "space x d": "editor::ToggleDiagnostics",
+      "space x X": "diagnostics::DeployCurrentFile",
+      "space c d": "editor::ToggleInlineDiagnostics",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+
+      // Git
+      "space g g": "git_panel::ToggleFocus",
+      "space g d": "git::Diff",
+      "space g h d": "editor::ToggleSelectedDiffHunks",
+      "space g h r": "git::Restore",
+      "space g h s": "git::ToggleStaged",
+
+      // UI / Panels
+      "space f t": "terminal_panel::Toggle",
+      "ctrl-/": "terminal_panel::Toggle",
+      "space u w": "editor::ToggleSoftWrap",
+      "space u l": "editor::ToggleLineNumbers",
+      "space u r": "editor::ToggleRelativeLineNumbers",
+      "space |": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space w d": "pane::CloseActiveItem",
+
+      // IA (Assistant)
+      "space a i": "assistant::InlineAssist",
+      "space a a": "assistant::ToggleFocus",
+    },
+  },
+
+  // --- FILE EXPLORER (Project Panel) ---
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "q": "workspace::ToggleRightDock",
+      "v": "project_panel::OpenSplitVertical",
+      "h": "project_panel::OpenSplitHorizontal",
+    },
+  },
+
+  // --- TERMINAL ---
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "cmd-j": "workspace::ToggleBottomDock",
+    },
+  },
+
+  {
+    "context": "Editor && GitPanel && CommitEditor && VimControl && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "q": "git_panel::Close",
+    },
+  },
+  {
+    "context": "GitPanel && !Editor",
+    "bindings": {
+      "q": "workspace::CloseActiveDock",
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == normal && !menu",
+    "bindings": {
+      "q": "workspace::CloseActiveDock",
+    },
+  },
+
+  // --- INSERT MODE ---
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "ctrl-c": "vim::SwitchToNormalMode",
+    },
+  },
+]
