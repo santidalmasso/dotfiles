@@ -1,0 +1,10 @@
+{
+  "app.model.cycleForward": "alt+p",
+  "app.model.cycleBackward": "shift+alt+p",
+  "app.thinking.cycle": "alt+t",
+  "app.thinking.toggle": "shift+alt+t",
+  "app.tree.filter.noTools": "ctrl+shift+t",
+  "tui.editor.undo": ["ctrl+-", "ctrl+_"],
+  "tui.select.up": ["up", "ctrl+p"],
+  "tui.select.down": ["down", "ctrl+n"]
+}

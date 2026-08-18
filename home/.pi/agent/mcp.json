@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "local",
+      "command": ["npx", "-y", "mcp-remote", "https://mcp.linear.app/mcp"]
+    },
+    "figma": {
+      "url": "http://127.0.0.1:3845/mcp",
+      "directTools": true,
+      "excludeTools": ["get_figjam", "figma_get_code_connect_map"]
+    },
+    "datadog": {
+      "type": "http",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp"
+    }
+  }
+}

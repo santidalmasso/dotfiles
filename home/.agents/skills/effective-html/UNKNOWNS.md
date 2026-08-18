@@ -1,0 +1,31 @@
+# Surfacing unknowns
+
+Recipes from thariqs.github.io/html-effectiveness/unknowns (11 demos): artifacts whose job is to close the gap between the map and the territory — before, during, or after implementation. All follow the Editor-tier round-trip discipline: **the page is a form whose submit action is the clipboard**. Reply builders are pre-filled so they never open empty; unanswered blanks render loud (accented `___`).
+
+Pick by which quadrant of the knowledge matrix you're attacking:
+
+| Quadrant | Artifact type | Recipes |
+|---|---|---|
+| Known unknowns — a question exists, answer doesn't | decision-forcing form | interview, open-questions mock, tweakable plan |
+| Unknown knowns — taste the user has but can't articulate | reaction surface | design directions, feature mock, domain teach |
+| Unknown unknowns — nobody knew to ask | surfacing / verification doc | blindspot pass, brainstorm, semantics map, deviation log, change quiz |
+
+## Pre-implementation
+
+- **Blindspot pass** — recon report on unfamiliar code before touching it. "What you asked for" vs "what you're actually walking into" contrast grid → stat strip → numbered blindspot cards typed by badge (Landmine / History / Convention / Missing concept), each with a "Why it bites" callout naming the failure mode and a copyable **prompt chip** — the exact guardrail sentence that neutralizes it. Final card folds all chips into one numbered mega-prompt ending in a work order: each discovered unknown becomes the user's next input.
+- **Domain teach** — turns a vague request into promptable vocabulary. Pipeline strip of the domain's stages → vocabulary ladder (term / plain definition / a "say →" example sentence per rung) → interactive console where sliders make the vocabulary physical (live CSS `filter`s, before/after wipe via invisible range input driving `clip-path`, named presets with commentary) → payoff card: "prompts you couldn't have written an hour ago."
+- **Design directions** — N complete visual systems (namespaced `.d1`–`.dN` CSS) rendering the **identical dataset** (declared up front) in fake-browser frames, each with a one-line thesis ("This direction says: …"). Steal/skip reaction chips per frame + a direction picker assemble a paste-ready reply that ends with a concrete implementation instruction. Reacting is easier than imagining.
+- **Feature mock** — clickable throwaway mock of the real feature. One markup, many layouts: a segmented control swaps a wrapper class and per-variant CSS repositions the same component, so reviewing 3 placements costs one click. Variant notes quantify tradeoffs ("steals ~56px of player height"); a footnote names where real code would live (path + flag). Ends with lettered answer chips per open question filling a live reply template.
+- **Brainstorm spectrum** — N grounded options plotted on an effort spectrum ("ship this afternoon" ⟷ "quarter-long bet") with dots that scroll to their cards. Each card: S/M/L/XL chip, mono file paths, a "Found in code —" evidence paragraph keeping every idea falsifiable, impact callout. Fixed bottom reply bar counts "this resonates" picks and builds the reply; copy disabled until ≥1 pick.
+- **Interview wizard** — one question at a time, **ordered by blast radius** (architecture → data model → UX → polish; color-coded rail explains why order matters). Data-driven from a `QUESTIONS` array; each option card carries its consequence inline; free-text "Other" flagged for follow-up; summary decision table with per-row edit; terminal state is a machine-built prompt: "Treat decisions 1–4 as fixed… start with a short plan." Unanswered degrades to "(unanswered — use your judgment)".
+- **Semantics map** — proof-of-understanding before a port/refactor: side-by-side code pairs with superscript-numbered `<mark>`s tied to margin notes (hover-linked via shared `data-p` keys) → a Preserved / Deliberately changed / Dropped triage making deviations explicit → edge-case table with verdict pills → sign-off card stating its own contract ("reply 'semantics confirmed'") plus a structured correction template that lowers the cost of disagreeing.
+- **Tweakable plan** — plan sorted by **likelihood-of-tweaking**, not execution order ("↑ tweak / ↓ trust" banner). High-tweak choices ship with their considered alternative behind a "View alternative →" toggle that also rewrites the schema diagram — alternatives visualized, not described — plus "Pick this if:" triggers and per-decision cost. Self-critique tags the weakest step. Mechanical work collapses into `<details>` ("Boring but necessary · 8 tasks"). Ends with three pre-written one-line replies.
+
+## During implementation
+
+- **Deviation log** — timestamped timeline the agent keeps while building, entries typed: Plan-confirmed / Discovery / **Deviation** (the load-bearing four-row schema: *What the plan said / What the code revealed / Conservative choice / Revisit*) / Todo-for-human (first-class, with explicit blocking scope). Declared policy: conservative choice, keep going, log it. Filter chips (All / Deviations / For you). Closes by distilling the run into copyable next-attempt bullets — surprises become the next plan's inputs instead of vanishing into scrollback.
+
+## Post-implementation
+
+- **Pitch doc** — buy-in from *other people*, "90-second read". Leads with a self-playing scripted demo (setTimeout chain driving real DOM: selections light up, button presses, progress, success toast; auto-loop + replay) → one-paragraph pitch with the killer metric bolded → objections pre-empted as `<details>` Q&A, each answer citing a spec anchor → spec-at-a-glance table → risk & rollback ("worst credible failure", "rollback is one toggle") → named approvers each with their *specific* ask → explicit CTA with deadline.
+- **Change quiz** — merge-readiness gate: report (diff stats, before/after mental-model diagrams with new pieces badged, "three non-obvious behaviors" as What/Why/Where rows, a callout flagging invisible dependencies the diff won't show) then a 6-question quiz of scenario questions ("worker OOM-killed mid-render — what happens?"), one-shot answers, misses reveal the report excerpt they came from. Full score unlocks a cleared-to-merge checklist; failure builds anchor links back to the sections to re-read — failure is navigation, not scolding.
