@@ -15,3 +15,6 @@ home/.config/raycast/extensions/
 home/.config/raycast/ai/
 home/.config/zed/prompts/
 home/.config/zed/conversations/
+
+home/.config/herdr/*
+!home/.config/herdr/config.toml
