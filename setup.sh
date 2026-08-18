@@ -14,6 +14,11 @@ fi
 echo "Installing packages..."
 brew bundle --file="$(dirname "$0")/Brewfile"
 
+# Install gh extensions (no brew formulae exist for these)
+echo "Installing gh extensions..."
+gh extension install dlvhdr/gh-dash || true
+gh extension install github/gh-stack || true
+
 # Create symlinks
 echo "Creating symlinks..."
 cd "$(dirname "$0")"
