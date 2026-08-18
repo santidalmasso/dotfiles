@@ -19,4 +19,8 @@ echo "Creating symlinks..."
 cd "$(dirname "$0")"
 stow home -t ~
 
+# Make scripts executable
+echo "Making scripts executable..."
+chmod +x "$HOME/.local/bin/"* 2>/dev/null || true
+
 echo "Done! Restart terminal or run: source ~/.zshrc"

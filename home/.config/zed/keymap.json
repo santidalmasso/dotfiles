@@ -70,7 +70,11 @@
       "[ e": "editor::GoToPreviousDiagnostic",
 
       // Git
-      "space g g": "git_panel::ToggleFocus",
+      // "space g g": "git_panel::ToggleFocus",
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "LazyGit", "reveal_target": "center" },
+      ],
       "space g d": "git::Diff",
       "space g h d": "editor::ToggleSelectedDiffHunks",
       "space g h r": "git::Restore",
@@ -115,6 +119,7 @@
     "bindings": {
       "ctrl-/": "workspace::ToggleBottomDock",
       "cmd-j": "workspace::ToggleBottomDock",
+      "cmd-t": "workspace::NewTerminal",
     },
   },
 

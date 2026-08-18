@@ -7,31 +7,65 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "diff_view_style": "split",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
   "sticky_scroll": {
-    "enabled": true
+    "enabled": true,
   },
   "agent": {
-    "dock": "left"
+    "sidebar_side": "right",
+    "dock": "right",
   },
   "git_panel": {
-    "dock": "right"
+    "tree_view": true,
+    "dock": "right",
   },
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "buffer_font_size": 12,
+  "ui_font_size": 12,
+  "buffer_font_family": "Dank Mono",
   "theme": {
     "mode": "dark",
-    "light": "One Light",
-    "dark": "Vesper"
-  }
+    "light": "Catppuccin Latte",
+    "dark": "Overnight Italic",
+  },
 }

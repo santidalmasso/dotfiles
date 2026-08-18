@@ -7,3 +7,11 @@
 
 node_modules
 *__pycache__
+
+# App runtime state written into stow-symlinked config dirs.
+# ~/.config/{raycast,zed} are symlinks into this repo, so these apps
+# write caches, databases and installed bundles here. None of it is config.
+home/.config/raycast/extensions/
+home/.config/raycast/ai/
+home/.config/zed/prompts/
+home/.config/zed/conversations/

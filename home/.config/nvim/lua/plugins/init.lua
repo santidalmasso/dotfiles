@@ -9,9 +9,10 @@ return {
     priority = 1000,
   },
   {
-    "nexxel/vesper.nvim",
+    "idr4n/github-monochrome.nvim",
     lazy = false,
     priority = 1000,
+    opts = {},
   },
   { "austinliuigi/smoke.nvim" },
   { "rebelot/kanagawa.nvim" },
@@ -22,7 +23,6 @@ return {
       colorscheme = "catppuccin-mocha",
     },
   },
-  { import = "lazyvim.plugins.extras.editor.plenary", enabled = false },
   { import = "lazyvim.plugins.extras.editor.refactoring", enabled = true },
   { import = "lazyvim.plugins.extras.editor.fzf" },
   { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -30,13 +30,20 @@ return {
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.lang.tailwind" },
   { import = "lazyvim.plugins.extras.linting.eslint" },
-  { import = "lazyvim.plugins.extras.formatting.prettier" },
+  { import = "lazyvim.plugins.extras.dap.core" },
+  { import = "lazyvim.plugins.extras.test.core" },
   { import = "lazyvim.plugins.extras.ai.copilot" },
   { import = "lazyvim.plugins.extras.util.gh" },
   {
+    "pwntester/octo.nvim",
+    opts = {
+      ssh_aliases = { ["marvik.github.com"] = "github.com" },
+    },
+  },
+  {
     "zbirenbaum/copilot.lua",
     opts = function(_, opts)
-      opts.copilot_node_command = "/Users/santidalmasso/.local/state/fnm_multishells/38917_1765891936288/bin/node"
+      opts.copilot_node_command = "/Users/santidalmasso/.local/state/fnm_multishells/12536_1767878253168/bin/node"
       return opts
     end,
   },
