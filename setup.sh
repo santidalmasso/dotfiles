@@ -43,6 +43,10 @@ if ! command -v brew &>/dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Trust third-party taps; brew refuses to load their formulae/casks otherwise
+echo "Trusting third-party taps..."
+brew trust --tap docker/tap nikitabobko/tap tw93/tap
+
 # Install dependencies
 echo "Installing packages..."
 brew bundle --file="$(dirname "$0")/Brewfile"
