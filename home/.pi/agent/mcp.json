@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "linear": {
-      "type": "local",
-      "command": ["npx", "-y", "mcp-remote", "https://mcp.linear.app/mcp"]
+      "url": "https://mcp.linear.app/mcp/readonly",
+      "auth": "oauth"
     },
     "figma": {
       "url": "http://127.0.0.1:3845/mcp",
