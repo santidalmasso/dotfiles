@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "037e8078db4b20b4aa25c04f21c6de7d335ec449",
+      "skillFolderHash": "82def67855a0d2aad7794207951820fa5422fdb0",
       "installedAt": "2026-03-18T20:31:39.693Z",
-      "updatedAt": "2026-08-20T23:11:17.155Z"
+      "updatedAt": "2026-10-17T19:01:32.075Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -33,63 +33,54 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/handoff/SKILL.md",
-      "skillFolderHash": "2242e8f05424b8c2ae94194a90d97b88d16108ec",
+      "skillFolderHash": "ce24892bd2d4b9e7fd5ac9b95c03175e18bef388",
       "installedAt": "2026-06-03T02:36:45.261Z",
-      "updatedAt": "2026-08-20T23:32:22.404Z"
+      "updatedAt": "2026-10-17T19:01:34.293Z"
     },
     "codebase-design": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/codebase-design/SKILL.md",
-      "skillFolderHash": "344e3efc88ee60663b2e989555c2efdb548fbd42",
+      "skillFolderHash": "07ba1cd60efc12d0d3a083005c1d9651cf15e39a",
       "installedAt": "2026-07-25T20:27:32.702Z",
-      "updatedAt": "2026-08-20T23:32:31.993Z"
+      "updatedAt": "2026-10-17T19:01:36.224Z"
     },
     "diagnosing-bugs": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
-      "skillFolderHash": "99bd56983e42bc752c52da67f1112e4121781cd1",
+      "skillFolderHash": "5fdd6cc53385395441910b026c72d71768e993d4",
       "installedAt": "2026-07-25T20:27:32.706Z",
-      "updatedAt": "2026-08-20T23:32:34.249Z"
+      "updatedAt": "2026-10-17T19:01:38.213Z"
     },
     "grilling": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "skillFolderHash": "f0732035b8b1b60ae39454e4191caef32fa91903",
+      "skillFolderHash": "28aceb4c9567b985cb47f7db88cf23c9f33af8b8",
       "installedAt": "2026-07-25T20:27:32.711Z",
-      "updatedAt": "2026-08-20T23:32:39.222Z"
+      "updatedAt": "2026-10-17T19:01:40.228Z"
     },
     "improve-codebase-architecture": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
-      "skillFolderHash": "3d35cd438f4067b03c8b3792e038960e4ac11526",
+      "skillFolderHash": "39bd9cc130f7dfcc4e3ea0b3613f6ebed0d0ad2b",
       "installedAt": "2026-07-25T20:27:32.714Z",
-      "updatedAt": "2026-08-20T23:32:43.844Z"
-    },
-    "resolving-merge-conflicts": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/resolving-merge-conflicts/SKILL.md",
-      "skillFolderHash": "77f0d7de3143abbf03e55a63522d30bff31ae908",
-      "installedAt": "2026-07-25T20:27:32.716Z",
-      "updatedAt": "2026-08-20T23:32:48.458Z"
+      "updatedAt": "2026-10-17T19:01:41.895Z"
     },
     "herdr": {
       "source": "ogulcancelik/herdr",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ogulcancelik/herdr.git",
       "skillPath": "skills/herdr/SKILL.md",
-      "skillFolderHash": "f8bb649bb92ddc99e6af463ab9a635da98c7b129",
+      "skillFolderHash": "2be0d86d481d1bb29c62e11ef37b78d27d01b478",
       "installedAt": "2026-07-27T13:04:05.084Z",
-      "updatedAt": "2026-08-20T23:32:59.665Z"
+      "updatedAt": "2026-10-17T19:01:45.824Z"
     },
     "show-me": {
       "source": "humanlayer/skills",
