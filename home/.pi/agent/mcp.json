@@ -1,13 +1,16 @@
 {
   "mcpServers": {
     "linear": {
-      "url": "https://mcp.linear.app/mcp/readonly",
-      "auth": "oauth"
+      "url": "https://mcp.linear.app/mcp/readonly"
     },
     "figma": {
       "url": "http://127.0.0.1:3845/mcp",
       "directTools": true,
-      "excludeTools": ["get_figjam", "figma_get_code_connect_map"]
+      "excludeTools": [
+        "get_figjam",
+        "figma_get_code_connect_map"
+      ],
+      "enabled": false
     },
     "datadog": {
       "type": "http",
