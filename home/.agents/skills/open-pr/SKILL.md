@@ -11,7 +11,7 @@ Invoked at the end of every build playbook.
 
 **Commits.** Commit liberally. Rebase into small, ordered commits before opening PRs. Each commit is a future PR: landable, ordered to tell the story. Amend when the fix belongs in a just-made commit. New commit when separable. Commit bodies don't restate the subject.
 
-**PRs.** Run the **simplify** skill over the diff before commit. Write every PR title, description, and commit body with the **technical-writing** skill (every layer except Diátaxis, and apply the STE vocabulary rules: one word per action, keep articles, a plain verb over `-ing` where one works), then apply the **unslop** skill.
+**PRs.** Run the **simplify** skill over the diff before commit and the **no-comments** skill before review. Write every PR title, description, and commit body with the **technical-writing** skill (every layer except Diátaxis, and apply the STE vocabulary rules: one word per action, keep articles, a plain verb over `-ing` where one works), then apply the **unslop** skill.
 
 **Titles.** Conventional Commits `type(scope): subject`, no trailing period. Type such as `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, or `perf`. Scope is the area, such as `server` or `web-ui`. Subject is short, imperative, and names a real symbol when one carries the change, for example `fix(web-ui): debounce SearchInput on type`.
 
@@ -33,3 +33,5 @@ After the sections, attach videos or screenshots when they prove a claim. Full S
 **Readiness.** Open every PR ready, never as a draft. Omit `--draft`. If a PR still opens as a draft, run `gh pr ready <number>`. Run `gh pr view <number>` before you refer to PR status.
 
 **After.** Opening a PR does not start a babysit. Post the URL and keep building. Finish the phase or stack first. Push back when feedback drifts from intent.
+
+A subagent that opens a PR runs the **interrogate**, **simplify**, and **no-comments** skills, and posts the URL. It returns to the parent without babysitting.

@@ -24,6 +24,7 @@ Remaining triggers:
 - Any prose surface, your reply to the user included → the **unslop** skill. Write the reply per **Writing the reply**. Agent-facing prose also follows the **writing-for-agents** skill.
 - Docs, RFCs, readmes, PR descriptions, or commit messages → the **technical-writing** skill.
 - Before commit → the **simplify** skill over the diff.
+- Before review → the **no-comments** skill.
 - Shipping UI / CLI → reproduce and verify on the same surface yourself, with the **agent-browser** skill for browser UIs. For bug fixes, reproduce first on the same surface yourself. Hand to the user only under the narrow Bug fix step 1 exception.
 - Running a benchmark, measuring perf yourself, or reporting a speedup or regression you measured → the **explain the number** principle before you report or act on the number.
 - Broken skill mid-task → fix it in its own PR. Don't block. Don't silently work around it.
