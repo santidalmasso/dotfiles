@@ -81,7 +81,19 @@ defaults:
                 width: 20
                 hidden: true
     refetchIntervalMinutes: 30
-keybindings: {}
+keybindings:
+    prs:
+        - key: T
+          name: review in tuicr
+          command: tuicr pr {{.RepoName}}#{{.PrNumber}}
+        - key: D
+          name: structural diff (difftastic)
+          command: >-
+            cd {{.RepoPath}} &&
+            { [ "$(gh repo view --json nameWithOwner -q .nameWithOwner)" = "{{.RepoName}}" ] ||
+              { printf 'Open gh-dash inside {{.RepoName}} to diff this PR. Press enter.'; read -r _; exit 1; }; } &&
+            git fetch -q origin pull/{{.PrNumber}}/head {{.BaseRefName}} &&
+            git dft origin/{{.BaseRefName}}...FETCH_HEAD
 repoPaths: {}
 theme:
     ui:
