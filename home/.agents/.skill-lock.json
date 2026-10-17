@@ -109,6 +109,15 @@
       "skillFolderHash": "e9488296a44211c42701ff71705b7901470ec78f",
       "installedAt": "2026-10-17T18:10:52.577Z",
       "updatedAt": "2026-10-17T18:10:52.577Z"
+    },
+    "write-discoverable-code": {
+      "source": "dmmulroy/.dotfiles",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dmmulroy/.dotfiles.git",
+      "skillPath": "home/.agents/skills/write-discoverable-code/SKILL.md",
+      "skillFolderHash": "209109d21718bff6da3ebd65dfee8de582ced0ab",
+      "installedAt": "2026-10-17T20:46:05.618Z",
+      "updatedAt": "2026-10-17T20:46:05.618Z"
     }
   },
   "dismissed": {

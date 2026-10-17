@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Santi mode
 
-Bundled skills live at `../<name>/SKILL.md` from this file. Run a skill by reading it and following it. Read `references/harness.md` once per session to map subagents, plan mode, loops, and transcripts to the harness you are in. When you tell the user to type a skill, write `/<name>` in Claude Code and `/skill:<name>` in pi.
+Bundled skills live at `../<name>/SKILL.md` from this file. Run a skill by reading it and following it. Read `references/harness.md` once per session to map subagents, plan mode, loops, and transcripts to the harness you are in, and `references/models.md` for the model each role runs on. When you tell the user to type a skill, write `/<name>` in Claude Code and `/skill:<name>` in pi.
 
 ## Non-negotiables
 
@@ -18,6 +18,7 @@ Remaining triggers:
 - "Teach me this", "help me really understand X" → the **teach** skill. "I'm new to this codebase", "help me learn X" → the **learn** skill.
 - About to ask the user on a "which approach", "how should I", or "what should this do" fork → classify it before you ask. If the answer is a fact you could observe by running something (behavior, timing, layout, output, perf, even whether an eval separates), it is not the human's to answer. Sketch it, run it, and let the result decide. If the task is a read-only Investigation whose deliverable is a cited answer, stay in it and answer from the evidence rather than building a sketch. Reserve the question for a genuine product or preference call no experiment can settle. Under a full-autonomy grant, decide a call the grant covers, act on it, and report it, with no reply word and no offer. Under the grant, for a call only the operator can make, apply a default, report it with a full explanation, and say in plain words what the operator could tell you to do instead. The operator answers in their own words. Never give a shorthand token to type back. Gates the operator named and the Always-pause list in Autonomy still need the operator.
 - Any code → name the data shape first, and choose its organizing structure per the **model the domain** principle.
+- Naming or renaming anything (a function, type, constant, file, error string) → the **write-discoverable-code** skill. Every identifier is a search query.
 - Code crossing a function boundary → the **codebase-design** skill. Design it twice before implementing.
 - Contested design → the **interrogate** skill (multi-model adversarial) before shipping.
 - Nontrivial multi-step → write the throughput checkpoint (Feature step 3).
@@ -87,7 +88,9 @@ Read the rule in the **principles** skill for any principle you apply. Each entr
 
 Spawn subagents for bulk reading, independent slices, and second opinions. The chat that receives `/santi-mode` runs the playbook and owns every spawn. `references/harness.md` maps each role to the tool in this harness.
 
-**Defaults for every spawn.** Run in the background, read-only when the job only reads, file pointers not inlined context. A different model family goes through the **second-opinion** skill.
+**Defaults for every spawn.** Run in the background, read-only when the job only reads, file pointers not inlined context. Pick the model and effort for the role from `references/models.md`. A different model family goes through the **second-opinion** skill.
+
+**Use `subagent_type: "santi-agent"` for any subagent you spawn inside a playbook step** (code-writing delegates, ad-hoc helpers), and put this file's absolute path in its prompt. The chat that receives `/santi-mode` runs the playbook. Never spawn a `santi-agent` to run the playbook itself. Routed workflow skills (`how`, `why`, `interrogate`, `retro`) set their own subagent types for read-only exploration or diverse-model review. Respect what the skill prescribes, don't override to `santi-agent`.
 
 You own every subagent's work. Review the diff and write your own summary, don't pass through what it said. A second opinion is the same prompt against a different model. Agreement is high-signal.
 

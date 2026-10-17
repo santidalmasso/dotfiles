@@ -5,9 +5,9 @@ Read once per session. Skills in this pack name a job, not a tool. This file map
 | Job | Claude Code | pi |
 |---|---|---|
 | Read-only explorer | `Agent` with `subagent_type: "Explore"`. It keeps Bash, so the brief also says "do not edit files". | `Agent` with `subagent_type: "Explore"` (read, grep, find, ls only). |
-| Worker that edits | `Agent` with `subagent_type: "general-purpose"`. `isolation: "worktree"` for its own checkout. | `Agent` with `subagent_type: "general-purpose"`. Give it its own worktree in the brief. |
+| Worker that edits | `Agent` with `subagent_type: "santi-agent"` (defined in `~/.claude/agents/`). `isolation: "worktree"` for its own checkout. | `Agent` with `subagent_type: "santi-agent"` (defined in `~/.pi/agent/agents/`). Give it its own worktree in the brief. pi subagents load no AGENTS.md and no skills, so the brief carries everything. |
 | Verifier | `general-purpose` with a read-and-run brief. | `Agent` with `subagent_type: "Verify"`. |
-| Same-family model override | `model: "opus"`, `"sonnet"`, `"haiku"`, or `"fable"`; `effort` for reasoning level. | `model: "<provider>/<id>"` or a substring; `thinking` for level. |
+| Same-family model override | `model: "opus"`, `"sonnet"`, `"haiku"`, or `"fable"`; `effort` for reasoning level. `models.md` names the value per role. | `model: "<provider>/<id>"` or a substring; no per-call thinking level. `models.md` names the value per role. |
 | Other model family | The **second-opinion** skill (pi headless). The codex plugin's `codex:codex-rescue` agent is a second option. | The **second-opinion** skill (claude headless), or a subagent with an Anthropic model when that provider is configured. |
 | Background and wait | Subagents run in the background and notify you. | `run_in_background: true`, then `get_subagent_result`. |
 | Todo list | `TodoWrite` when present, otherwise keep the list in the reply. | `TodoWrite` from the todos extension. |
