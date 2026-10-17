@@ -82,15 +82,6 @@
       "installedAt": "2026-07-25T20:27:32.716Z",
       "updatedAt": "2026-08-20T23:32:48.458Z"
     },
-    "tdd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/tdd/SKILL.md",
-      "skillFolderHash": "79288be15c67b849f22b6572056601090fd20913",
-      "installedAt": "2026-07-25T20:27:32.718Z",
-      "updatedAt": "2026-08-20T23:32:50.716Z"
-    },
     "herdr": {
       "source": "ogulcancelik/herdr",
       "sourceType": "github",
@@ -118,6 +109,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-09-23T18:29:27.901Z",
       "updatedAt": "2026-09-23T18:29:27.901Z"
+    },
+    "anatomy": {
+      "source": "wheresryan22/anatomy",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wheresryan22/anatomy.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "e9488296a44211c42701ff71705b7901470ec78f",
+      "installedAt": "2026-10-17T18:10:52.577Z",
+      "updatedAt": "2026-10-17T18:10:52.577Z"
     }
   },
   "dismissed": {
@@ -139,4 +139,3 @@
     "claude-code"
   ]
 }
-
