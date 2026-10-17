@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", wants integration tests, asks for a failing test or a regression test, or when a bug has an obvious cheap local test target.
 ---
 
 # Test-Driven Development
@@ -19,11 +19,19 @@ See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking g
 
 A **seam** is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.
 
-**Test only at pre-agreed seams.** Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
+**Test only at named seams.** Before writing any test, write down the seams under test in your reply. Confirm them with the user only when the seam is itself a product call or the user asked to be consulted. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
 
 Ask: "What's the public interface, and which seams should we test?"
 
 When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+
+## When a failing test is impractical
+
+Do not force a test when it would be impractical. If the available test would require broad harness setup, brittle mocks, slow end-to-end infrastructure, production-only state, vague reproduction steps, or large unrelated fixture churn, skip adding a new test and use the closest useful verification instead.
+
+Use the closest executable regression check instead: a targeted script, manual reproduction command, browser automation, snapshot comparison, log assertion, or focused integration check.
+
+Prefer no new test over a bad test. A bad test is one that mostly tests mocks, encodes current implementation details, depends on timing or unrelated global state, needs expensive infrastructure for a small fix, or would be deleted immediately after proving the fix.
 
 ## Anti-patterns
 
@@ -34,5 +42,22 @@ When the shape of that interface is itself in question (how deep the module is, 
 ## Rules of the loop
 
 - **Red before green.** Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.
+- **Run the new test before fixing.** Confirm it fails for the intended reason. If it passes or fails for an unrelated reason, correct the test or reproduction before editing the implementation.
 - **One slice at a time.** One seam, one test, one minimal implementation per cycle.
-- **Refactoring is not part of the loop.** It belongs to the review stage (see the `code-review` skill), not the red → green implementation cycle.
+- **Refactoring is not part of the loop.** It belongs after the cycle is green, under the **simplify** skill, not the red → green implementation cycle.
+
+## Guardrails
+
+- Do not change tests merely to match a wrong implementation.
+- Do not weaken existing assertions unless the expected behavior has genuinely changed and the reason is clear.
+- Keep the regression test focused on the bug. Avoid broad fixture churn or unrelated coverage expansion.
+- If the bug is flaky, make the test deterministic where possible and document the signal being locked down.
+- If the bug exposes a broader class of failures, first land the focused regression path, then consider additional sibling coverage.
+
+## Final Response
+
+Report the evidence, not just the outcome:
+
+- Name the failing-before test or executable check and the failure it produced.
+- Name the passing-after test run and any nearby validation performed.
+- If failing-before evidence could not be demonstrated, state why and describe the closest regression check used instead.

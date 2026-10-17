@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOPIC · a learning page</title>
+<style>
+:root{--ground:#fafafa;--ink:#171717;--text-2:#525252;--muted:#8f8f8f;--faint:#bdbdbd;--rule:#ebebeb;--well:#f1f1f1;--column:550px;--rail:168px;--gap:48px;--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-serif:"EB Garamond","Iowan Old Style",Georgia,serif;--font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--ease:cubic-bezier(.22,.75,.2,1);--card-shadow:0 0 0 1px rgb(0 0 0/.04),0 1px 2px rgb(0 0 0/.04),0 2px 6px rgb(0 0 0/.04)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans);font-size:14px;line-height:20.5px;font-weight:450;-webkit-font-smoothing:antialiased}
+.page{display:grid;grid-template-columns:1fr var(--rail) var(--column) 1fr;column-gap:var(--gap);padding:56px 20px 0}
+.rail{grid-column:2;position:sticky;top:56px;align-self:start;display:grid;gap:6px;font-size:13px;line-height:20px;color:var(--muted)}
+.rail a{color:inherit;text-decoration:none}
+.rail a[aria-current]{color:var(--ink);font-weight:550}
+.rail .num{font-family:var(--font-serif);font-style:italic;font-size:14px;margin-right:8px;font-variant-numeric:lining-nums tabular-nums}
+.column{grid-column:3;padding-bottom:120px}
+.masthead h1{margin:0;font-size:14px;font-weight:550}
+.masthead h1 span{color:var(--muted);font-weight:450}
+.statement{margin:12px 0 4px;font-weight:550}
+.statement em{font-family:var(--font-serif);font-style:italic;font-size:16px}
+.meta{margin:0;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.section{margin-top:72px;scroll-margin-top:48px}
+.section-head{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+.section-head h2{margin:0;font-size:14px;font-weight:550;white-space:nowrap}
+.section-head::after{content:"";order:1;flex:1;height:1px;background:var(--rule)}
+.section-index{order:2;color:var(--muted);font-family:var(--font-serif);font-style:italic;font-size:16px;font-variant-numeric:lining-nums tabular-nums}
+h3{margin:16px 0 2px;font-size:14px;font-weight:550}
+p{margin:0 0 12px;color:var(--text-2)}
+p.lead{color:var(--ink);font-weight:550}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--faint);text-decoration-thickness:1px;text-underline-offset:3px}
+code{font-family:var(--font-mono);font-size:12.5px;background:var(--well);padding:1px 5px;border-radius:4px}
+.card{margin:20px 0;padding:14px 16px;border-radius:12px;background:#fff;box-shadow:var(--card-shadow)}
+.card pre{margin:0;font-family:var(--font-mono);font-size:12px;line-height:19px;white-space:pre;overflow-x:auto}
+.card .ref{display:block;margin-bottom:8px;color:var(--muted);font-family:var(--font-mono);font-size:12px}
+.card svg{display:block;width:100%;height:auto}
+.caption{margin:8px 0 0;color:var(--muted);font-size:13px}
+ol.path{margin:0;padding-left:0;list-style:none;counter-reset:step}
+ol.path li{display:grid;grid-template-columns:28px 1fr;padding:9px 0;border-top:1px solid var(--rule);counter-increment:step}
+ol.path li::before{content:counter(step,decimal-leading-zero);font-family:var(--font-serif);font-style:italic;color:var(--muted);font-variant-numeric:lining-nums tabular-nums}
+ol.path li strong{font-weight:550}
+table{width:100%;margin:24px 0 28px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:9px 16px 9px 0;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font-weight:550}
+td.term{font-family:var(--font-mono);font-size:12.5px;white-space:nowrap}
+details{border-top:1px solid var(--rule)}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{display:flex;justify-content:space-between;gap:16px;padding:11px 0;cursor:pointer;list-style:none;font-weight:500}
+summary::after{content:"+";color:var(--faint)}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:8px}
+.colophon{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);color:var(--muted);font-size:13px;line-height:20px}
+@media (max-width:1119.98px){.page{grid-template-columns:1fr;padding-top:32px}.rail{position:static;grid-column:1;margin-bottom:24px}.column{grid-column:1;max-width:var(--column);margin:0 auto;width:100%}}
+@media (prefers-reduced-motion:no-preference){a{transition:color .15s var(--ease)}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="rail" aria-label="Learning path">
+    <a href="#map" aria-current="true"><span class="num">01</span>Map</a>
+    <a href="#path"><span class="num">02</span>Path</a>
+    <a href="#step-1"><span class="num">03</span>STEP ONE</a>
+    <a href="#vocabulary"><span class="num">04</span>Vocabulary</a>
+    <a href="#gotchas"><span class="num">05</span>Gotchas</a>
+    <a href="#more"><span class="num">06</span>Learn more</a>
+  </nav>
+  <main class="column">
+    <header class="masthead">
+      <h1>TOPIC <span>· a learning page</span></h1>
+      <p class="statement">ONE SENTENCE THAT SAYS WHAT IT IS, with at most one <em>italic</em> phrase.</p>
+      <p class="meta">For WHO · N files read · DATE</p>
+    </header>
+
+    <section id="map" class="section">
+      <div class="section-head"><h2>Map</h2><span class="section-index">01</span></div>
+      <p class="lead">THE THING IN ONE PLAIN SENTENCE.</p>
+      <p>Its big parts and what each owns.</p>
+      <div class="card">
+        <svg viewBox="0 0 520 200" role="img" aria-label="MAP DIAGRAM"><!-- inline SVG --></svg>
+        <p class="caption">CAPTION.</p>
+      </div>
+    </section>
+
+    <section id="path" class="section">
+      <div class="section-head"><h2>Path</h2><span class="section-index">02</span></div>
+      <ol class="path">
+        <li><span></span><div><strong>STEP ONE.</strong> What you can do after it.</div></li>
+        <li><span></span><div><strong>STEP TWO.</strong> What you can do after it.</div></li>
+      </ol>
+    </section>
+
+    <section id="step-1" class="section">
+      <div class="section-head"><h2>STEP ONE</h2><span class="section-index">03</span></div>
+      <p>Short prose. One idea per sentence.</p>
+      <div class="card">
+        <a class="ref" href="file:///ABS/PATH/file.ts#L12">src/file.ts:12 · functionName()</a>
+        <pre>the lines that matter</pre>
+      </div>
+    </section>
+
+    <section id="vocabulary" class="section">
+      <div class="section-head"><h2>Vocabulary</h2><span class="section-index">04</span></div>
+      <table><tbody>
+        <tr><td class="term">Term</td><td>Meaning here, one line, as the code spells it.</td></tr>
+      </tbody></table>
+    </section>
+
+    <section id="gotchas" class="section">
+      <div class="section-head"><h2>Gotchas</h2><span class="section-index">05</span></div>
+      <details><summary>What looks like X but is Y</summary><p>Why, with the finding behind it.</p></details>
+    </section>
+
+    <section id="more" class="section">
+      <div class="section-head"><h2>Learn more</h2><span class="section-index">06</span></div>
+      <table><tbody>
+        <tr><td><a href="URL">Source title</a></td><td>What it is good for.</td></tr>
+      </tbody></table>
+    </section>
+
+    <footer class="colophon">Built from: files read, commands run, sources fetched.</footer>
+  </main>
+</div>
+</body>
+</html>
