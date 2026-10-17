@@ -32,20 +32,17 @@ return {
   { import = "lazyvim.plugins.extras.linting.eslint" },
   { import = "lazyvim.plugins.extras.dap.core" },
   { import = "lazyvim.plugins.extras.test.core" },
-  { import = "lazyvim.plugins.extras.ai.copilot" },
   { import = "lazyvim.plugins.extras.util.gh" },
   {
-    "pwntester/octo.nvim",
-    opts = {
-      ssh_aliases = { ["marvik.github.com"] = "github.com" },
+    "coder/claudecode.nvim",
+    event = "VeryLazy",
+    opts = { terminal = { provider = "none" } },
+    keys = {
+      { "<leader>ac", false },
+      { "<leader>af", false },
+      { "<leader>ar", false },
+      { "<leader>aC", false },
     },
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    opts = function(_, opts)
-      opts.copilot_node_command = "/Users/santidalmasso/.local/state/fnm_multishells/12536_1767878253168/bin/node"
-      return opts
-    end,
   },
   -- { import = "lazyvim.plugins.extras.util.dot" },
   { "sindrets/diffview.nvim" },
