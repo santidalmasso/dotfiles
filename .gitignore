@@ -27,6 +27,7 @@ home/.pi/agent/*
 !home/.pi/agent/mcp.json
 !home/.pi/agent/settings.json
 !home/.pi/agent/keybindings.json
+!home/.pi/agent/AGENTS.md
 
 # ~/.claude holds credentials, transcripts and org-specific settings; never track it.
 home/.claude/

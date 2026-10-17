@@ -22,18 +22,6 @@ install_skills() {
   done
 }
 
-# Link every skill into Claude Code; the CLI only links the ones it installs
-link_skills() {
-  local dir name target
-  echo "Linking skills for Claude Code..."
-  mkdir -p "$HOME/.claude/skills"
-  for dir in "$HOME"/.agents/skills/*/; do
-    name=$(basename "$dir")
-    target="$HOME/.claude/skills/$name"
-    [ -e "$target" ] || [ -L "$target" ] || ln -s "../../.agents/skills/$name" "$target"
-  done
-}
-
 echo "Setting up dotfiles..."
 
 # Install Homebrew if not present
@@ -63,7 +51,10 @@ stow home -t ~
 
 setup_node
 install_skills
-link_skills
+
+# Link public and private skills into both harnesses; rerun `sync-skills` any time
+chmod +x "$HOME/.local/bin/sync-skills"
+"$HOME/.local/bin/sync-skills"
 
 # Make scripts executable
 echo "Making scripts executable..."

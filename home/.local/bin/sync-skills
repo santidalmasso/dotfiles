@@ -1,0 +1,45 @@
+#!/bin/bash
+# Link every skill into pi and Claude Code. Rerun after pulling the repo or
+# adding a skill to ~/.agents/skills-private.
+set -euo pipefail
+
+skills="$HOME/.agents/skills"
+private="$HOME/.agents/skills-private"
+claude="$HOME/.claude/skills"
+repo="$(cd "$(readlink -f "$skills")/../.." && pwd)"
+exclude="$(git -C "$repo" rev-parse --git-path info/exclude)"
+[[ "$exclude" = /* ]] || exclude="$repo/$exclude"
+
+mkdir -p "$claude"
+added=0 pruned=0
+
+# Private skills get a link in ~/.agents/skills. That dir is the repo tree, so
+# the link name goes in .git/info/exclude to stay out of git status.
+if [ -d "$private" ]; then
+  for dir in "$private"/*/; do
+    [ -d "$dir" ] || continue
+    name=$(basename "$dir")
+    if [ ! -e "$skills/$name" ]; then
+      ln -s "$private/$name" "$skills/$name"; added=$((added + 1))
+    fi
+    grep -qxF "home/.agents/skills/$name" "$exclude" 2>/dev/null || echo "home/.agents/skills/$name" >> "$exclude"
+  done
+fi
+
+# Private skill deleted: drop its link.
+for link in "$skills"/*; do
+  if [ -L "$link" ] && [ ! -e "$link" ]; then rm "$link"; pruned=$((pruned + 1)); fi
+done
+
+# Claude Code reads its own dir, one link per skill.
+for dir in "$skills"/*/; do
+  name=$(basename "$dir")
+  if [ ! -e "$claude/$name" ] && [ ! -L "$claude/$name" ]; then
+    ln -s "../../.agents/skills/$name" "$claude/$name"; added=$((added + 1))
+  fi
+done
+for link in "$claude"/*; do
+  if [ -L "$link" ] && [ ! -e "$link" ]; then rm "$link"; pruned=$((pruned + 1)); fi
+done
+
+echo "skills synced: $added link(s) added, $pruned pruned, $(ls -d "$skills"/*/ | wc -l | tr -d ' ') skills total"
