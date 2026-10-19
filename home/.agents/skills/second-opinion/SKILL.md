@@ -24,7 +24,7 @@ Write the brief to a file in the scratch directory. The other agent starts with 
 
 ```bash
 # from Claude Code
-pi -p --no-session --no-skills --no-extensions --no-context-files --no-mcp \
+pi -p --no-session --no-skills --no-extensions --no-context-files \
   --thinking high "$(cat "$BRIEF")"
 # add --model openai-codex/<id> to pick a model
 
