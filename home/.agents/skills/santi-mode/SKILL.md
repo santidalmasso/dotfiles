@@ -126,7 +126,7 @@ When no playbook fits, design one: frame the done predicate, pick the rigor leve
 - **Refactoring.** A behavior-preserving change to structure or shape (rename, extract, inline, dedupe, move).
 - **Review.** A branch, PR, or diff to judge. Ends in a verdict, not a change.
 - **Autonomous run.** A long task to drive to completion without stopping ("run until done", "/loop until X").
-- **Authoring or modifying a skill.** Writing or editing a SKILL.md. The **writing-for-agents** skill, then the **open-pr** skill.
-- **Opening a PR.** Invoked at the end of every other playbook. The **open-pr** skill.
+- **Authoring or modifying a skill.** Writing or editing a SKILL.md. The **writing-for-agents** skill. Commits stay on the local branch unless the user asks for a PR.
+- **Opening a PR.** Only when the user asks for one; no other playbook opens a PR on its own. The **open-pr** skill.
 - **Catching up.** The user comes back after a long run or a wall of subagent output: the **catch-up** skill.
 - **Proving app behavior.** A repo with no scripted way to drive its UI/CLI/service like a user: the **create-verification-skill** skill generates `.agents/skills/verify-<app>/`; the **maintain-verification-skill** skill keeps its feature map honest.

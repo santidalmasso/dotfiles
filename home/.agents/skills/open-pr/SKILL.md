@@ -1,11 +1,11 @@
 ---
 name: open-pr
-description: Open a ready PR from small ordered commits with a Conventional Commits title and a briefing-style body. Use for "open a PR", "push this up", "create the pull request", or at the end of a build playbook. Uses gh, and gh stack for stacked PRs.
+description: Open a ready PR from small ordered commits with a Conventional Commits title and a briefing-style body. Use for "open a PR", "push this up", "create the pull request". Never at the end of a build playbook unless the user asks. Uses gh, and gh stack for stacked PRs.
 ---
 
 # Open a PR
 
-Invoked at the end of every build playbook.
+Invoked only when the user asks for a PR. Build playbooks leave their commits on the local branch.
 
 **Worktree.** Work from a git worktree off main. Subagents inherit it. Multiple subagents on the same branch each get their own worktree, or `git fetch && git reset --hard origin/<branch>` between them. Dirty branch with unrelated work: patch out, fresh worktree, apply. Snarled worktree: reset from main, redo minimally.
 
