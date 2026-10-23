@@ -118,13 +118,15 @@ Comments follow the same rule as the reply. Write them clean as you go. Keep a c
 
 Open a todolist whose first items are the matched playbook's steps, copied in verbatim, before any task-specific todos. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Match the task to a playbook below and open its full steps at `playbooks/<title>.md`, with the title in kebab case, hyphens kept and other punctuation dropped. Copy its steps in verbatim.
 
-When no playbook fits, design one: frame the done predicate, pick the rigor level, sequence verifiable units, and keep a decision log. Say in the reply that you did.
+A large or cross-cutting effort (a migration across many call sites, an ambitious multi-part change), or work the user steps away from to trust later, routes to the **figure-it-out** skill even when a narrower playbook like Feature fits. Use **figure-it-out** whenever no bundled playbook fits. It designs a bespoke, rigorous playbook for the task. When the user wants to review the code between phases rather than trust the run afterwards, use **Multi-phase plan** instead.
 
 - **Investigation.** Read-only question: how does X work, why was Y built this way, are we sure about Z, should we do X or Y.
 - **Bug fix.** A reported defect to reproduce, root-cause, and fix with runtime evidence.
 - **Feature.** New or changed behavior, built from a named data shape.
 - **Refactoring.** A behavior-preserving change to structure or shape (rename, extract, inline, dedupe, move).
 - **Review.** A branch, PR, or diff to judge. Ends in a verdict, not a change.
+- **Multi-phase plan.** Work too big for one review: write a phased plan, then run one phase at a time and stop after each for the user to review the code.
+- **Prototype.** A design or behavior decision to settle cheaply with throwaway variants before the real build.
 - **Autonomous run.** A long task to drive to completion without stopping ("run until done", "/loop until X").
 - **Authoring or modifying a skill.** Writing or editing a SKILL.md. The **writing-for-agents** skill. Commits stay on the local branch unless the user asks for a PR.
 - **Opening a PR.** Only when the user asks for one; no other playbook opens a PR on its own. The **open-pr** skill.

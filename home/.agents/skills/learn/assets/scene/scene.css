@@ -1,0 +1,49 @@
+/* Scenes: one colour per idea, kept for the whole course. */
+:root{
+  --c-actual:#2f6fb0;--c-budget:#b07a12;--c-key:#1f8a7a;--c-calc:#7b4bb0;--c-bad:#b8442c;--c-good:#2e7a4d;--c-time:#a0457a;
+  --c-cell:#ffffff;--c-cell-line:#d9ded9;--c-soft:#edf0ec;--c-stage:#fbfcfa;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --c-actual:#58c4dd;--c-budget:#f0c34a;--c-key:#5cd0b3;--c-calc:#b48ce8;--c-bad:#fc6255;--c-good:#83c167;--c-time:#e88cc0;
+  --c-cell:#1d221e;--c-cell-line:#343b36;--c-soft:#222823;--c-stage:#141815}}
+:root[data-theme="dark"]{
+  --c-actual:#58c4dd;--c-budget:#f0c34a;--c-key:#5cd0b3;--c-calc:#b48ce8;--c-bad:#fc6255;--c-good:#83c167;--c-time:#e88cc0;
+  --c-cell:#1d221e;--c-cell-line:#343b36;--c-soft:#222823;--c-stage:#141815}
+.k-actual{color:var(--c-actual)}.k-budget{color:var(--c-budget)}.k-key{color:var(--c-key)}.k-calc{color:var(--c-calc)}.k-bad{color:var(--c-bad)}.k-good{color:var(--c-good)}.k-time{color:var(--c-time)}
+.k-actual,.k-budget,.k-key,.k-calc,.k-bad,.k-good,.k-time{font-weight:550}
+figure.sc{margin:24px 0;padding:0;border-radius:14px;background:var(--card);box-shadow:var(--card-shadow);overflow:hidden;outline:none}
+.sc-top{display:flex;justify-content:space-between;gap:12px;padding:12px 16px 0;font-size:12px;color:var(--muted)}
+.sc-fig{font-family:var(--font-serif);font-style:italic;font-size:13.5px;color:var(--ink)}
+.sc-title{text-align:right}
+.sc-stage{overflow-x:auto;background:var(--c-stage);margin:10px 0 0;border-block:1px solid var(--rule)}
+.sc-stage svg{display:block;width:100%;height:auto;min-width:560px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.sc-t{fill:var(--ink);font-family:var(--font-sans);white-space:pre}
+.sc-mono{font-family:var(--font-mono)}
+.sc-serif{font-family:var(--font-serif);font-style:italic}
+.sc-o{transition:opacity .25s var(--ease)}
+.sc-focus .sc-o[data-tags]:not(.on){opacity:.16}
+.sc-say{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:12px 16px 4px;min-height:62px;align-items:start}
+.sc-say p{margin:0;color:var(--ink);font-size:14px;line-height:21px;max-width:none}
+.sc-k{font-family:var(--font-serif);font-style:italic;color:var(--muted);font-size:13px;padding-top:1px}
+.sc-term{cursor:help;border-bottom:1.5px solid currentColor;border-bottom-color:color-mix(in srgb,currentColor 35%,transparent)}
+.sc-term.on{border-bottom-color:currentColor}
+.sc-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:6px 16px 14px}
+.sc-btn{font:inherit;font-size:12.5px;line-height:18px;padding:5px 11px;border-radius:8px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.sc-btn:hover:not(:disabled){border-color:var(--faint)}
+.sc-btn:disabled{color:var(--faint);cursor:default}
+.sc-play{min-width:62px}
+.sc-dots{display:flex;gap:5px;align-items:center;margin-right:auto}
+.sc-dot{width:9px;height:9px;padding:0;border-radius:50%;border:none;background:var(--faint);cursor:pointer}
+.sc-dot[aria-current="true"]{background:var(--ink);transform:scale(1.15)}
+.sc-params{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.sc-param{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.sc-param[hidden]{display:none}
+.sc-param input[type=range]{width:140px;accent-color:var(--accent)}
+.sc-param output{font-variant-numeric:tabular-nums;color:var(--ink);min-width:34px}
+.sc-seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.sc-seg button{font:inherit;font-size:12.5px;padding:4px 10px;border:none;background:var(--card);color:var(--muted);cursor:pointer}
+.sc-seg button+button{border-left:1px solid var(--rule)}
+.sc-seg button[aria-pressed="true"]{background:var(--accent-soft);color:var(--ink);font-weight:550}
+.sc-caption{max-width:none;margin:0;padding:10px 16px 14px;border-top:1px solid var(--rule);color:var(--muted);font-size:12.5px;line-height:18px}
+@media (max-width:640px){.sc-say{grid-template-columns:1fr}.sc-k{padding:0}}
+@media (prefers-reduced-motion: reduce){.sc-o{transition:none}}

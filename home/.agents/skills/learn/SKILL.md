@@ -49,9 +49,9 @@ Put a simplifying assumption in the sentence it qualifies, beside the idea it li
 
 Diagrams follow the **show-me** skill and go into the page as inline SVG: a file tree for ownership, a call tree for flow, a sequence for interaction, pseudocode for an algorithm.
 
-When a mechanism is the heart of the topic, build a **scene**: a flat figure that steps from the simplest picture to the full one. The same objects move between steps, so the reader watches the transformation. Each idea keeps one colour on every page. The last step is a playground that the reader drives with a slider or a choice. The **anatomy** skill's isometric figures are for when the person asks for them.
+When a mechanism is the heart of the topic, build a **scene** in the 3Blue1Brown manner: a flat figure that steps from the simplest picture to the full one, the same objects moving between steps, one colour per idea, and a playground as the last step. Read `references/scenes.md` before the first scene. Reuse the engine in `assets/scene/` and write only the scene files. The **anatomy** skill's isometric figures are for when the person asks for them.
 
-A figure that costs about an hour: build the first one, show it, and get the person's verdict before you build more. Check every step of every figure in both themes, from a list, and claim visual review as "N of N figures checked".
+Build the first scene, show it with `assets/scene/preview.html`, and get the person's verdict before you build more. A scene is done when its jump audit reports no findings and every step reads in both themes. Claim visual review as "N of N figures checked".
 
 Open the page for them. For a small topic, the reply is the page.
 

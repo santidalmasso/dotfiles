@@ -6,19 +6,24 @@ Taken from skills.wheresryan.sh/anatomy and its collection page, as inspiration,
 
 | Token | Value | Paints |
 |---|---|---|
-| `--ground` | `#fafafa` | page background |
-| `--ink` | `#171717` | headings, strong text, numbers |
-| `--text-2` | `#525252` | body paragraphs |
-| `--muted` | `#8f8f8f` | section index, captions, colophon |
-| `--faint` | `#bdbdbd` | link underlines, icons at rest |
-| `--rule` | `#ebebeb` | hairlines, table rows, details borders |
-| `--well` | `#f1f1f1` | inline code background |
-| `--column` | `550px` | reading column width |
-| `--rail` | `168px` | sticky nav column on the left |
+| `--ground` | `#f7f8f6` | page background |
+| `--ink` | `#161a17` | headings, strong text, numbers |
+| `--text-2` | `#4a514c` | body paragraphs |
+| `--muted` | `#7f8781` | section index, captions, colophon |
+| `--faint` | `#c2c8c3` | link underlines, icons at rest |
+| `--rule` | `#e4e8e4` | hairlines, table rows, details borders |
+| `--well` | `#edf0ec` | inline code background |
+| `--card` | `#ffffff` | cards and figures |
+| `--accent` | `#2f5d8a` | focus rings, sliders, notes |
+| `--accent-soft` | `#e6eef6` | the pressed option, takeaways, a link target |
+| `--column` | `660px` | reading column width, so a 640-wide scene is not scaled down |
+| `--rail` | `200px` | sticky nav column on the left |
 | `--gap` | `48px` | column gutter |
 | `--ease` | `cubic-bezier(0.22,0.75,0.2,1)` | the only easing |
 
-Cards (code blocks, figures) are white on the ground with a hairline shadow and a 12px radius. Nothing else has a border.
+Every colour token has a dark value. The template sets them under `@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`, and again under `:root[data-theme="dark"]`. Scene colours live in `assets/scene/scene.css`.
+
+Cards (code blocks, figures) are `--card` on the ground with a hairline shadow and a 12px radius. Nothing else has a border.
 
 ## Type
 
@@ -43,6 +48,6 @@ Cards (code blocks, figures) are white on the ground with a hairline shadow and 
 
 - The rail is the learning path: one entry per step, numbered, the current one in ink.
 - A step's evidence sits in a card: the file and function as a `path:line` link, the lines that matter, nothing more.
-- Diagrams are inline SVG in a card, with a one-line caption under it in muted.
+- Static diagrams are inline SVG in a card, with a one-line caption under it in muted. A mechanism is a scene: see `scenes.md`.
 - The glossary is a table: term in mono, meaning in body text.
 - Learn more is a table: source as a link, one line on what it is good for.

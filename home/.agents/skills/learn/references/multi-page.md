@@ -6,6 +6,8 @@ Read this before the first build of a course that spans more than one page, or t
 
 One script assembles every page from fragments: shared CSS, the rail, the pager, and the figures. Put these in it from the first build:
 
+- **Scenes from placeholders.** A page writes `<!--SCENE:name-->` where the figure belongs. The build replaces it with `<figure class="sc" data-scene="name"></figure>`, fails when `scenes/name.js` does not exist, inlines `assets/scene/scene.css` with the page CSS, and ends the body with one `<script>`: the engine, then each scene the page uses, with every `</script` escaped as `<\/script`.
+
 - **Figure numbers come from ids.** Each figure has an id. The build numbers figures in page order and turns a reference marker into "Fig N.M". A typed number goes stale as soon as someone inserts a figure.
 - **One reference page holds every term and every gotcha.** Each has an anchor (`#v-*` for terms, `#g-*` for gotchas). Pages link a term at its first use, and the build adds the definition as a hover title. Parallel agents write new terms and gotchas to their own fragment files, and the build merges them.
 - **Two validation modes.** Per-page mode warns, because during parallel work a sibling's anchors may not exist yet. Strict mode fails on an unknown anchor, a broken cross-page link, or a stale figure number. The lead runs strict mode before every publish.
@@ -28,7 +30,7 @@ Start the test from a non-zero scroll position, and confirm it fails without the
 
 ## Figures across parallel agents
 
-1. Build the engine and one exemplar figure yourself. Screenshot every step, and fix the faults in the engine before anyone else uses it.
-2. Write a brief: the engine API, the colour key, the page shape, the voice, the file order (a figure's file exists before its placeholder), and which pages each agent owns.
-3. Fork by page group. Each agent returns one contact sheet per figure, with consecutive identical frames removed, plus a manifest that lists the sheets.
+1. Copy the engine from `assets/scene/`. Build one exemplar scene in the new domain yourself, run its jump audit, and screenshot every step.
+2. Write a brief: `scenes.md`, the course's colour key, the page shape, the voice, the file order (a figure's file exists before its placeholder), and which pages each agent owns.
+3. Fork by page group. Agents write scene files only and leave the engine as it is. Each agent returns a clean jump audit and one contact sheet per figure, with consecutive identical frames removed, plus a manifest that lists the sheets.
 4. Review from the manifests: every sheet, in both themes. Report coverage as "N of N figures checked".

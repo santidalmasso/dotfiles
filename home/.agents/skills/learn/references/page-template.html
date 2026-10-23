@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TOPIC · a learning page</title>
 <style>
-:root{--ground:#fafafa;--ink:#171717;--text-2:#525252;--muted:#8f8f8f;--faint:#bdbdbd;--rule:#ebebeb;--well:#f1f1f1;--column:550px;--rail:168px;--gap:48px;--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-serif:"EB Garamond","Iowan Old Style",Georgia,serif;--font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--ease:cubic-bezier(.22,.75,.2,1);--card-shadow:0 0 0 1px rgb(0 0 0/.04),0 1px 2px rgb(0 0 0/.04),0 2px 6px rgb(0 0 0/.04)}
+:root{--ground:#f7f8f6;--ink:#161a17;--text-2:#4a514c;--muted:#7f8781;--faint:#c2c8c3;--rule:#e4e8e4;--well:#edf0ec;--card:#ffffff;--accent:#2f5d8a;--accent-soft:#e6eef6;--card-shadow:0 0 0 1px rgb(0 0 0/.05),0 1px 2px rgb(0 0 0/.04),0 2px 6px rgb(0 0 0/.04);--column:660px;--rail:200px;--gap:48px;--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-serif:"Iowan Old Style","EB Garamond",Georgia,serif;--font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--ease:cubic-bezier(.22,.75,.2,1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#111412;--ink:#e7ebe8;--text-2:#b2b9b4;--muted:#848c86;--faint:#4b524d;--rule:#262b28;--well:#1b1f1c;--card:#171b18;--accent:#86afdb;--accent-soft:#1a2633;--card-shadow:0 0 0 1px rgb(255 255 255/.07),0 1px 2px rgb(0 0 0/.3);color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#111412;--ink:#e7ebe8;--text-2:#b2b9b4;--muted:#848c86;--faint:#4b524d;--rule:#262b28;--well:#1b1f1c;--card:#171b18;--accent:#86afdb;--accent-soft:#1a2633;--card-shadow:0 0 0 1px rgb(255 255 255/.07),0 1px 2px rgb(0 0 0/.3);color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans);font-size:14px;line-height:20.5px;font-weight:450;-webkit-font-smoothing:antialiased}
 .page{display:grid;grid-template-columns:1fr var(--rail) var(--column) 1fr;column-gap:var(--gap);padding:56px 20px 0}
@@ -29,7 +31,7 @@ p{margin:0 0 12px;color:var(--text-2)}
 p.lead{color:var(--ink);font-weight:550}
 a{color:inherit;text-decoration:underline;text-decoration-color:var(--faint);text-decoration-thickness:1px;text-underline-offset:3px}
 code{font-family:var(--font-mono);font-size:12.5px;background:var(--well);padding:1px 5px;border-radius:4px}
-.card{margin:20px 0;padding:14px 16px;border-radius:12px;background:#fff;box-shadow:var(--card-shadow)}
+.card{margin:20px 0;padding:14px 16px;border-radius:12px;background:var(--card);box-shadow:var(--card-shadow)}
 .card pre{margin:0;font-family:var(--font-mono);font-size:12px;line-height:19px;white-space:pre;overflow-x:auto}
 .card .ref{display:block;margin-bottom:8px;color:var(--muted);font-family:var(--font-mono);font-size:12px}
 .card svg{display:block;width:100%;height:auto}
@@ -51,6 +53,7 @@ details p{padding-bottom:8px}
 .colophon{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);color:var(--muted);font-size:13px;line-height:20px}
 @media (max-width:1119.98px){.page{grid-template-columns:1fr;padding-top:32px}.rail{position:static;grid-column:1;margin-bottom:24px}.column{grid-column:1;max-width:var(--column);margin:0 auto;width:100%}}
 @media (prefers-reduced-motion:no-preference){a{transition:color .15s var(--ease)}}
+/* Paste assets/scene/scene.css here when the page has a scene. */
 </style>
 </head>
 <body>
@@ -91,6 +94,7 @@ details p{padding-bottom:8px}
     <section id="step-1" class="section">
       <div class="section-head"><h2>STEP ONE</h2><span class="section-index">03</span></div>
       <p>Short prose. One idea per sentence.</p>
+      <figure class="sc" data-scene="SCENE_NAME"></figure>
       <div class="card">
         <a class="ref" href="file:///ABS/PATH/file.ts#L12">src/file.ts:12 · functionName()</a>
         <pre>the lines that matter</pre>
@@ -119,5 +123,6 @@ details p{padding-bottom:8px}
     <footer class="colophon">Built from: files read, commands run, sources fetched.</footer>
   </main>
 </div>
+<script>/* When the page has a scene: assets/scene/engine.js, then each scene file. Write each closing script tag inside them as <\/script. */</script>
 </body>
 </html>

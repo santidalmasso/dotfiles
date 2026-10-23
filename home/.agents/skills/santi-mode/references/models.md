@@ -13,6 +13,9 @@ Claude Code takes `model` plus `effort` (`low` to `max`). pi takes `model` as `p
 | Verifier | `sonnet`, effort high | `gpt-6-luna` |
 | Judgment and prose: how explainer, why synthesizer, retro judgment and synthesizer, interrogate Reviewer A | inherit, effort xhigh | `gpt-6-astra` |
 | Hardest tasks: a slice you would not trust a worker with | inherit, effort max | `gpt-6-astra` |
-| Other family: retro divergent, interrogate Reviewer B, decision-log trail review | the **second-opinion** skill, pi default | the **second-opinion** skill, `opus` |
+| Other family: retro divergent, interrogate Reviewer B, decision-log trail review | the **second-opinion** skill, `gpt-6.1-sol` | the **second-opinion** skill, `opus` |
+| Arena runners: one seat per family | `opus`, effort xhigh, plus pi `gpt-6-astra` xhigh in a herdr pane | `gpt-6-astra`, plus `claude --model opus --effort xhigh` in a herdr pane |
+| Architect runners: one seat per family | `opus`, effort xhigh, plus pi `gpt-6-astra` xhigh in a herdr pane | `gpt-6-astra`, plus `claude --model opus --effort xhigh` in a herdr pane |
+| Arena cross-judge: other family, read-only | pi `gpt-6-astra` xhigh in a herdr pane | `claude --model opus --effort xhigh` in a herdr pane |
 
 The budget line sets the effort token for every role at once. `unlimited` is max everywhere, `large` is the table above, `medium` drops judgment to high, `small` drops everything to medium.
