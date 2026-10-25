@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Learn an unfamiliar codebase, subsystem, library, or concept from the outside in, and leave one page to keep: a map, a learning path, sections that cite the real code or the sources, a glossary, and the gotchas, in simplified technical English.
+description: "Learn an unfamiliar codebase, subsystem, library, or concept from the outside in, and leave one page to keep: a map, a learning path, sections that cite the real code or the sources, a glossary, and the gotchas, in simplified technical English."
 disable-model-invocation: true
 ---
 
