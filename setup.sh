@@ -47,11 +47,13 @@ gh extension install github/gh-stack || true
 # Create symlinks
 echo "Creating symlinks..."
 cd "$(dirname "$0")"
+mkdir -p "$HOME/.config/herdr/plugins"
 stow home -t ~
 
 echo "Building and linking herdr plugins..."
 cargo build --release --manifest-path "$HOME/.config/herdr/plugins/attention-router/Cargo.toml"
 herdr plugin link "$HOME/.config/herdr/plugins/attention-router"
+herdr plugin install paulbkim-dev/vim-herdr-navigation --yes
 
 setup_node
 install_skills

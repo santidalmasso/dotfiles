@@ -37,3 +37,22 @@ map({ "n", "x" }, "<leader>yr", function()
 end, { desc = "Copy File:Line Reference" })
 
 -- map("n", "<leader>fw", "<cmd>FzLua live_grep <CR>", { desc = "Find word" })
+
+local function navigate_split_or_herdr_pane(wincmd, direction)
+  local previous_window = vim.api.nvim_get_current_win()
+  vim.cmd("wincmd " .. wincmd)
+  if vim.api.nvim_get_current_win() ~= previous_window then
+    return
+  end
+  if vim.env.HERDR_PANE_ID and vim.env.HERDR_PANE_ID ~= "" then
+    local herdr = vim.env.HERDR_BIN_PATH
+    if herdr == nil or herdr == "" or vim.fn.executable(herdr) == 0 then
+      herdr = "herdr"
+    end
+    vim.fn.system({ herdr, "pane", "focus", "--direction", direction, "--pane", vim.env.HERDR_PANE_ID })
+  end
+end
+
+for key, dir in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
+  vim.keymap.set("n", "<C-" .. key .. ">", function() navigate_split_or_herdr_pane(key, dir) end, { desc = "Navigate " .. dir .. " (vim/herdr)" })
+end
