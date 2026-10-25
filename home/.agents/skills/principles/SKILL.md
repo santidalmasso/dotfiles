@@ -5,7 +5,7 @@ description: The 24 engineering rules behind santi-mode, one rule each, named so
 
 # Principles
 
-One rule per heading, in pstack's words. Each entry opens with when it applies. Apply the ones the task triggers, and in the reply name the principle and the decision it changed. A citation with no decision behind it is name-dropping.
+One rule per heading. Each entry opens with when it applies. Apply the ones the task triggers, and in the reply name the principle and the decision it changed. A citation with no decision behind it is name-dropping.
 
 ## Core
 

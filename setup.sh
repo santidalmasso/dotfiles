@@ -49,6 +49,10 @@ echo "Creating symlinks..."
 cd "$(dirname "$0")"
 stow home -t ~
 
+echo "Building and linking herdr plugins..."
+cargo build --release --manifest-path "$HOME/.config/herdr/plugins/attention-router/Cargo.toml"
+herdr plugin link "$HOME/.config/herdr/plugins/attention-router"
+
 setup_node
 install_skills
 

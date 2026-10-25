@@ -1,0 +1,22 @@
+id = "santi.attention-router"
+name = "Attention router"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Focus the agent that most needs a human decision and keep agent-owned subagents out of the human's queue"
+platforms = ["linux", "macos"]
+
+[[build]]
+command = ["cargo", "build", "--release"]
+
+[[startup]]
+command = ["target/release/attention-router", "sync"]
+
+[[actions]]
+id = "next"
+title = "Focus the agent that most needs you"
+contexts = ["workspace"]
+command = ["target/release/attention-router", "next"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["target/release/attention-router", "sync"]

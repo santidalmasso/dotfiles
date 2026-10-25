@@ -134,6 +134,12 @@ prefix = "ctrl+semicolon"
 # workspaces = "" # e.g. "ctrl+shift" makes ctrl+shift+1..9 switch workspaces directly
 # agents = ""     # e.g. "alt" makes alt+1..9 focus agent rows directly
 
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "santi.attention-router.next"
+description = "focus the agent that most needs you"
+
 # [worktrees]
 # directory = "~/.herdr/worktrees"
 

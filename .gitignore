@@ -18,6 +18,7 @@ home/.config/zed/conversations/
 
 home/.config/herdr/*
 !home/.config/herdr/config.toml
+!home/.config/herdr/plugins/
 
 # pi stores auth tokens, sessions, plans and caches alongside its config.
 # Track only the five config entries; everything else stays local.

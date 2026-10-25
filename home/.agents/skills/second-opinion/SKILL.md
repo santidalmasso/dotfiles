@@ -38,8 +38,10 @@ End the brief with: "Finish your reply with a line containing only `SEAT-DONE`."
      --model opus --permission-mode plan
    ```
 
+   Then mark the pane as yours, so the attention router keeps it out of the user's queue and hands it back to them only if you go idle or exit: `herdr pane report-metadata <pane> --source santi:spawn --token owner="$HERDR_PANE_ID"`.
+
 3. Prompt with a pointer, not the brief itself: `herdr agent prompt <name> "Read $BRIEF and follow it."`. A pointer stays under the terminal's line-input limit.
-4. Wait on the sentinel: `herdr pane wait-output <pane> --regex '(?m)^\s*SEAT-DONE\s*$' --timeout <ms>`. The anchors skip the brief's own mention of the sentinel if the agent echoes the file. Use this rather than `agent prompt --wait`. pi can stay `idle` to herdr while it answers, so `--wait` returns `agent_prompt_stalled` on a prompt that did land. Read the pane before sending anything again. If a review can outlast the harness's foreground cap, run the wait in the background.
+4. Wait on the sentinel: `herdr pane wait-output <pane> --regex '(?m)^\s*SEAT-DONE\s*$' --timeout <ms>`. The anchors skip the brief's own mention of the sentinel if the agent echoes the file. Use this rather than `agent prompt --wait`. pi can stay `idle` to herdr while it answers, so `--wait` returns `agent_prompt_stalled` on a prompt that did land. Read the pane before sending anything again. If the pane shows an approval dialog, you are its operator. Answer it with `herdr agent send-keys` when it falls inside your own grant. A question about the work goes to the user, quoting the dialog and the pane id. If a review can outlast the harness's foreground cap, run the wait in the background.
 5. Read the answer with `herdr agent read <name> --source recent-unwrapped --lines 400`. It returns plain text, not JSON. When the answer has scrolled off, ask the agent to write it to a Markdown file in the scratch directory and reply with only the path, then read the file.
 6. Close the pane you created with `herdr pane close <pane>` once you have the answer.
 

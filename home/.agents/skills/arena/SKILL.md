@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Arena
 
-Ported from pstack's arena. Read `../santi-mode/references/harness.md` for this harness's tools and `../santi-mode/references/models.md` for the arena rows.
+Read `../santi-mode/references/harness.md` for this harness's tools and `../santi-mode/references/models.md` for the arena rows.
 
 Open a todolist with one entry per phase (Frame, Fan out, Cross-judge, Pick, Graft, Verify) before launching anything.
 
