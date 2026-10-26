@@ -1,4 +1,4 @@
 - Research the codebase before editing. Never change code you haven't read.
-- For non-trivial work, run `/skill:santi-mode`. It routes to the skills pack in `~/.agents/skills`. The `principles` skill holds the engineering rules; read it before citing one.
+- For non-trivial work, run `/skill:santi-mode`. It routes to the skills pack in `~/.agents/skills`. The `principle-<name>` skills hold the engineering rules; read a leaf before citing it.
 - If a question can be answered by running something (behavior, timing, output, whether a test separates), run it instead of asking. Ask only for a product or preference call no experiment can settle, or before an irreversible action.
 - Interact with GitHub through the `gh` CLI.

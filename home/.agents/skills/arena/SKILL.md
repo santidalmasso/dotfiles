@@ -17,7 +17,7 @@ Every candidate gets the same prompt, so the prompt is the contract.
 1. State the artifact each candidate is producing.
 2. Derive the rubric, 3-6 concrete gradeable criteria for what success looks like on *this* task. It is the picker's tool in Phase D. Candidates only see the task.
 3. Pick the runners from the `Arena runners` row in `models.md`. The default is one seat per family. The seat in your own family is a subagent. The other family's seat is an agent in a herdr pane (see Other-family seats below). Outside herdr, run every seat in your own family and say so. If the `Agent` tool or pi rejects a model, run that seat on its family's default and say so. Spawn more runners when the arena covers multiple design directions. Use the same model N times when the work is generation-bound rather than judgment-sensitive. Pick each subagent's effort for the job, per the Subagents section of the **santi-mode** skill.
-4. Give each candidate its own output location, per the **separate before serializing shared state** principle. For code, that means a git worktree: `isolation: "worktree"` for a Claude Code subagent, and `git worktree add <scratch>/arena-<slug>/candidate-<n> -b arena/<slug>-<n>` for a pi subagent or a herdr seat. For anything else, use `<scratch>/arena-<slug>/candidate-<n>/`.
+4. Give each candidate its own output location, per the **separate-before-serializing-shared-state** principle skill. For code, that means a git worktree: `isolation: "worktree"` for a Claude Code subagent, and `git worktree add <scratch>/arena-<slug>/candidate-<n> -b arena/<slug>-<n>` for a pi subagent or a herdr seat. For anything else, use `<scratch>/arena-<slug>/candidate-<n>/`.
 
 Write the task to `<scratch>/arena-<slug>/task.md`. Include the artifact, the shared grounding (file paths to read), and the instruction to write the artifact plus a short `RATIONALE.md` in the candidate's own location. The rationale names the alternatives the candidate considered and what it rejected. Finish with: "When the artifact and RATIONALE.md are written, reply with a line containing only `SEAT-DONE`." Leave the rubric out of it.
 
@@ -35,17 +35,17 @@ After all Phase B candidates complete, take one model from the `Arena cross-judg
 
 Read every candidate end to end before picking. Score each against the rubric criterion by criterion, not on holistic feel, and compare with the cross-judge. Agreement on the base confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous. Read both rationales before deciding.
 
-Pick the base a future maintainer can extend most easily without breaking invariants. When two feel tied, prefer the cleaner boundary or smaller API, per the **laziness protocol** principle.
+Pick the base a future maintainer can extend most easily without breaking invariants. When two feel tied, prefer the cleaner boundary or smaller API, per the **laziness-protocol** principle skill.
 
 ## Phase E: Graft
 
-Walk each losing candidate once more for what is worth porting into the base, usually one or two things per candidate, not most of it. Fold each graft in by hand, per the **redesign from first principles** principle, so the result stays coherent under one mental model. Don't paste mechanically.
+Walk each losing candidate once more for what is worth porting into the base, usually one or two things per candidate, not most of it. Fold each graft in by hand, per the **redesign-from-first-principles** principle skill, so the result stays coherent under one mental model. Don't paste mechanically.
 
 If the candidates converge on one shape, that is strong agreement. Note it and ship the consensus shape. No graft is needed. If they wildly diverge, Phase A was under-specified. Reframe and re-run rather than averaging the divergence.
 
 ## Phase F: Verify
 
-Verify the synthesized artifact like any other output, per the **prove it works** principle. If verification finds a problem the arena missed, either Phase A was wrong (re-frame and re-run) or a candidate caught it and you missed the graft (go back to Phase E). Don't paper over it.
+Verify the synthesized artifact like any other output, per the **prove-it-works** principle skill. If verification finds a problem the arena missed, either Phase A was wrong (re-frame and re-run) or a candidate caught it and you missed the graft (go back to Phase E). Don't paper over it.
 
 Then clean up what the arena created. Close its herdr panes, remove its worktrees with `git worktree remove`, and delete its `arena/<slug>-*` branches once the synthesis has landed.
 
