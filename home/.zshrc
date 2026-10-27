@@ -3,6 +3,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.local/opt/go/bin:$PATH"
 export PATH="$HOME/Library/pnpm:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 # Environment
 export EDITOR=nvim

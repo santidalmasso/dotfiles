@@ -19,6 +19,9 @@ home/.config/zed/conversations/
 home/.config/herdr/*
 !home/.config/herdr/config.toml
 !home/.config/herdr/plugins/
+# herdr writes install state and GitHub-installed plugins here; track only local plugins.
+home/.config/herdr/plugins/*
+!home/.config/herdr/plugins/attention-router/
 
 # pi stores auth tokens, sessions, plans and caches alongside its config.
 # Track only the five config entries; everything else stays local.
