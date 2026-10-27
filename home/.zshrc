@@ -65,3 +65,7 @@ export LOCALHOST_CERT="$HOME/.certs/localhost.pem"
 
 # Completions
 autoload -Uz compinit && compinit -C
+
+if [ -f '/Users/santidalmasso/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/santidalmasso/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+if [ -f '/Users/santidalmasso/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/santidalmasso/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
