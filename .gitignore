@@ -34,6 +34,7 @@ home/.pi/agent/*
 !home/.pi/agent/AGENTS.md
 !home/.pi/agent/agents/
 
-# ~/.claude holds credentials, transcripts and org-specific settings; track only custom agents.
+# ~/.claude holds credentials, transcripts and org-specific settings; track only custom agents and themes.
 home/.claude/*
 !home/.claude/agents/
+!home/.claude/themes/
